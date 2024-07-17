@@ -4,7 +4,7 @@ Welcome to the PIANA recruitment process! We are delighted to have you on board,
 
 As a starting point, we'd like you to complete this initial technical exercise. We firmly believe that our tech team should share a robust coding culture, and to evaluate this, we propose assessing your practices through a straightforward coding exercise. 
 
-Some people have a working solution to this exercise in around 2 hours, some take longer. What matters is that you think you've shown what you want 😎.
+Some people have a working solution to this exercise in around 2 hours, some take longer. ** What matters is that you think you've shown what you want 😎. **
 
 This exercise typically leads to an interview. Unless the proficiency level falls short of our expectations, we will provide you with a detailed response outlining any aspects that we consider not acceptable for our team.
 
@@ -37,7 +37,7 @@ We plan on handling many more drugs, the first one is "Dafalgan", which you are 
 
 - [ ] Fork this repository
 - [ ] Implement Dafalgan logic
-- [ ] Publish it on GitHub as a pull-request
+- [ ] Publish it on your GitHub
 - [ ] Send us the link
 
 You are encouraged to take the existing code and bring it to the highest level of quality you think is fit. We recommend that you write tests to help you during this process. What we want to see is your production grade code.
