@@ -81,5 +81,13 @@ describe("Pharmacy", () => {
         ).toEqual([new Drug("Fervex", -1, 0)]);
       });
     });
+
+    describe("Like Herbal Tea", () => {
+      it("should not increase the benefit above 50", () => {
+        expect(
+          new Pharmacy([new Drug("Fervex", 1, 50)]).updateBenefitValue()
+        ).toEqual([new Drug("Fervex", 0, 50)]);
+      });
+    });
   });
 });
