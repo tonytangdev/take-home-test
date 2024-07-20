@@ -1,21 +1,24 @@
 import { Drug } from "./Drug";
+import { HerbalTea } from "./HerbalTea";
 
-export class Fervex extends Drug {
+export class Fervex extends HerbalTea {
   constructor(expiresIn: number, benefit: number) {
-    super("Fervex", expiresIn, benefit);
+    super(expiresIn, benefit, "Fervex");
   }
   updateBenefit() {
-    let amoutOfBenefitToIncrease = 1;
+    if (this.expiresIn > 10) {
+      super.updateBenefit();
+      return;
+    }
+
+    let amoutOfBenefitToIncrease = 2;
+
     if (this.expiresIn <= 0) {
       amoutOfBenefitToIncrease = -this.benefit;
-    } else {
-      if (this.expiresIn <= 10) {
-        amoutOfBenefitToIncrease += 1;
-      }
-      if (this.expiresIn <= 5) {
-        amoutOfBenefitToIncrease += 1;
-      }
+    } else if (this.expiresIn <= 5) {
+      amoutOfBenefitToIncrease += 1;
     }
+
     this.benefit += amoutOfBenefitToIncrease;
     if (this.benefit > 50) {
       this.benefit = 50;
