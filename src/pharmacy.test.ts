@@ -85,9 +85,9 @@ describe("Pharmacy", () => {
 
     describe("Like Herbal Tea", () => {
       it("should not increase the benefit above 50", () => {
-        expect(
-          new Pharmacy([new Drug("Fervex", 1, 50)]).updateBenefitValue()
-        ).toEqual([new Drug("Fervex", 0, 50)]);
+        expect(new Pharmacy([new Fervex(1, 50)]).updateBenefitValue()).toEqual([
+          new Fervex(0, 50),
+        ]);
       });
     });
   });
