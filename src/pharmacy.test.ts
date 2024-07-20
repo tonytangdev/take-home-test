@@ -98,5 +98,11 @@ describe("Pharmacy", () => {
         new Dafalgan(0, 1),
       ]);
     });
+
+    it("should decrease the benefit four times as fast after the expiration date", () => {
+      expect(new Pharmacy([new Dafalgan(0, 5)]).updateBenefitValue()).toEqual([
+        new Dafalgan(-1, 1),
+      ]);
+    });
   });
 });
