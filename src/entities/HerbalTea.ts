@@ -5,7 +5,9 @@ export class HerbalTea extends Drug {
     super("Herbal Tea", expiresIn, benefit);
   }
   updateBenefit() {
-    this.benefit += 1;
+    const amoutOfBenefitToIncrease = this.expiresIn <= 0 ? 2 : 1;
+    this.benefit += amoutOfBenefitToIncrease;
+    
     this.expiresIn -= 1;
   }
 }
