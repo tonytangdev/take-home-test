@@ -6,9 +6,9 @@ export class Fervex extends HerbalTea {
     super(expiresIn, benefit, "Fervex");
   }
   updateBenefit() {
-    let amoutOfBenefitToIncrease = this.computeAmoutOfBenefitToDecrease();
+    let amountOfBenefitToIncrease = this.computeAmountOfBenefitToDecrease();
 
-    this.benefit += amoutOfBenefitToIncrease;
+    this.benefit += amountOfBenefitToIncrease;
     if (this.benefit > 50) {
       this.benefit = 50;
     }
@@ -16,19 +16,19 @@ export class Fervex extends HerbalTea {
     this.expiresIn -= 1;
   }
 
-  protected computeAmoutOfBenefitToDecrease(): number {
+  protected computeAmountOfBenefitToDecrease(): number {
     if (this.expiresIn > 10) {
-      return super.computeAmoutOfBenefitToDecrease();
+      return super.computeAmountOfBenefitToDecrease();
     }
 
-    let amoutOfBenefitToIncrease = 2;
+    let amountOfBenefitToIncrease = 2;
 
     if (this.expiresIn <= 0) {
-      amoutOfBenefitToIncrease = -this.benefit;
+      amountOfBenefitToIncrease = -this.benefit;
     } else if (this.expiresIn <= 5) {
-      amoutOfBenefitToIncrease += 1;
+      amountOfBenefitToIncrease += 1;
     }
 
-    return amoutOfBenefitToIncrease;
+    return amountOfBenefitToIncrease;
   }
 }
