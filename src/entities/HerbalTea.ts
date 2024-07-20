@@ -5,7 +5,7 @@ export class HerbalTea extends Drug {
     super(name, expiresIn, benefit);
   }
   updateBenefit() {
-    const amoutOfBenefitToIncrease = this.expiresIn <= 0 ? 2 : 1;
+    const amoutOfBenefitToIncrease = this.computeAmoutOfBenefitToDecrease();
     this.benefit += amoutOfBenefitToIncrease;
 
     if (this.benefit > 50) {
@@ -13,5 +13,9 @@ export class HerbalTea extends Drug {
     }
 
     this.expiresIn -= 1;
+  }
+
+  protected computeAmoutOfBenefitToDecrease(): number {
+    return this.expiresIn <= 0 ? 2 : 1;
   }
 }
