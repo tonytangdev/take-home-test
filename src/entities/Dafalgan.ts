@@ -8,7 +8,7 @@ export class Dafalgan extends Drug {
     super.updateBenefit();
   }
 
-  protected computeAmountOfBenefitToDecrease() {
-    return super.computeAmountOfBenefitToDecrease() * 2;
+  protected computeAmountOfBenefitToIncrease() {
+    return super.computeAmountOfBenefitToIncrease() * 2;
   }
 }

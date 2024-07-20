@@ -11,7 +11,7 @@ export class Drug {
 
   updateBenefit() {
     const amountOfBenefitToDescrease = this.computeAmountOfBenefitToDecrease();
-    this.benefit -= amountOfBenefitToDescrease;
+    this.benefit += amountOfBenefitToDescrease;
     if (this.benefit < 0) {
       this.benefit = 0;
     }
@@ -19,7 +19,11 @@ export class Drug {
     this.expiresIn -= 1;
   }
 
-  protected computeAmountOfBenefitToDecrease(): number {
+  protected computeAmountOfBenefitToIncrease(): number {
     return this.expiresIn <= 0 ? 2 : 1;
+  }
+
+  private computeAmountOfBenefitToDecrease(): number {
+    return -this.computeAmountOfBenefitToIncrease();
   }
 }
