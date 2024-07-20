@@ -10,7 +10,12 @@ export class Drug {
   }
 
   updateBenefit() {
-    this.benefit -= 1;
+    const amoutOfBenefitToDescrease = this.expiresIn <= 0 ? 2 : 1;
+    this.benefit -= amoutOfBenefitToDescrease;
+    if (this.benefit < 0) {
+      this.benefit = 0;
+    }
+
     this.expiresIn -= 1;
   }
 }
