@@ -1,5 +1,5 @@
 import { Pharmacy } from "./pharmacy";
-import { Drug, Fervex, HerbalTea, MagicPill } from "./entities";
+import { Dafalgan, Drug, Fervex, HerbalTea, MagicPill } from "./entities";
 
 describe("Pharmacy", () => {
   describe("generic drug", () => {
@@ -89,6 +89,14 @@ describe("Pharmacy", () => {
           new Fervex(0, 50),
         ]);
       });
+    });
+  });
+
+  describe("Dafalgan drug", () => {
+    it("should decrease the benefit twice as fast as normal drugs", () => {
+      expect(new Pharmacy([new Dafalgan(1, 3)]).updateBenefitValue()).toEqual([
+        new Dafalgan(0, 1),
+      ]);
     });
   });
 });
