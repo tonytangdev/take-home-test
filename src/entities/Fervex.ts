@@ -11,6 +11,17 @@ export class Fervex extends HerbalTea {
       return;
     }
 
+    let amoutOfBenefitToIncrease = this.computeAmoutOfBenefitToDecrease();
+
+    this.benefit += amoutOfBenefitToIncrease;
+    if (this.benefit > 50) {
+      this.benefit = 50;
+    }
+
+    this.expiresIn -= 1;
+  }
+
+  protected computeAmoutOfBenefitToDecrease(): number {
     let amoutOfBenefitToIncrease = 2;
 
     if (this.expiresIn <= 0) {
@@ -19,11 +30,6 @@ export class Fervex extends HerbalTea {
       amoutOfBenefitToIncrease += 1;
     }
 
-    this.benefit += amoutOfBenefitToIncrease;
-    if (this.benefit > 50) {
-      this.benefit = 50;
-    }
-
-    this.expiresIn -= 1;
+    return amoutOfBenefitToIncrease;
   }
 }
