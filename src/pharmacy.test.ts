@@ -40,4 +40,12 @@ describe("Pharmacy", () => {
       ).toEqual([new Drug("Herbal Tea", -1, 50)]);
     });
   });
+
+  describe("Magic Pill drug", () => {
+    it("should not decrease expiresIn and benefit", () => {
+      expect(
+        new Pharmacy([new Drug("Magic Pill", 2, 3)]).updateBenefitValue()
+      ).toEqual([new Drug("Magic Pill", 2, 3)]);
+    });
+  });
 });
