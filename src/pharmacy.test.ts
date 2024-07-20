@@ -104,5 +104,11 @@ describe("Pharmacy", () => {
         new Dafalgan(-1, 1),
       ]);
     });
+
+    it("should not decrease the benefit below 0", () => {
+      expect(new Pharmacy([new Dafalgan(0, 0)]).updateBenefitValue()).toEqual([
+        new Dafalgan(-1, 0),
+      ]);
+    });
   });
 });
