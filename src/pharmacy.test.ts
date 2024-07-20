@@ -13,5 +13,11 @@ describe("Pharmacy", () => {
         new Pharmacy([new Drug("test", 0, 3)]).updateBenefitValue()
       ).toEqual([new Drug("test", -1, 1)]);
     });
+
+    it("should not decrease the benefit below 0", () => {
+      expect(
+        new Pharmacy([new Drug("test", 0, 0)]).updateBenefitValue()
+      ).toEqual([new Drug("test", -1, 0)]);
+    });
   });
 });
