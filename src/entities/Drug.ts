@@ -10,6 +10,7 @@ export class Drug {
   }
 
   updateBenefit() {
-    throw new Error("Method not implemented.");
+    this.benefit -= 1;
+    this.expiresIn -= 1;
   }
 }
