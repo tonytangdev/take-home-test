@@ -5,6 +5,7 @@ export class HerbalTea extends Drug {
     super("Herbal Tea", expiresIn, benefit);
   }
   updateBenefit() {
-    throw new Error("Method not implemented.");
+    this.benefit += 1;
+    this.expiresIn -= 1;
   }
 }
