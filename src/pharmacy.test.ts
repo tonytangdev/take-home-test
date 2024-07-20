@@ -57,5 +57,13 @@ describe("Pharmacy", () => {
         ).toEqual([new Drug("Fervex", 10, 4)]);
       });
     });
+
+    describe("when 5 < expiresIn <= 10", () => {
+      it("should decrease expiresIn and increase benefit by 2", () => {
+        expect(
+          new Pharmacy([new Drug("Fervex", 6, 3)]).updateBenefitValue()
+        ).toEqual([new Drug("Fervex", 5, 5)]);
+      });
+    });
   });
 });
