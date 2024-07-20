@@ -9,6 +9,9 @@ export class Fervex extends Drug {
     if (this.expiresIn <= 10) {
       amoutOfBenefitToIncrease += 1;
     }
+    if (this.expiresIn <= 5) {
+      amoutOfBenefitToIncrease += 1;
+    }
     this.benefit += amoutOfBenefitToIncrease;
     this.expiresIn -= 1;
   }
