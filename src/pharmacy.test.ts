@@ -1,5 +1,5 @@
 import { Pharmacy } from "./pharmacy";
-import { Drug, HerbalTea } from "./entities";
+import { Drug, HerbalTea, MagicPill } from "./entities";
 
 describe("Pharmacy", () => {
   describe("generic drug", () => {
@@ -44,9 +44,9 @@ describe("Pharmacy", () => {
 
   describe("Magic Pill drug", () => {
     it("should not decrease expiresIn and benefit", () => {
-      expect(
-        new Pharmacy([new Drug("Magic Pill", 2, 3)]).updateBenefitValue()
-      ).toEqual([new Drug("Magic Pill", 2, 3)]);
+      expect(new Pharmacy([new MagicPill(2, 3)]).updateBenefitValue()).toEqual([
+        new MagicPill(2, 3),
+      ]);
     });
   });
 
